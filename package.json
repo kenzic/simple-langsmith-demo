@@ -1,0 +1,17 @@
+{
+  "name": "simple-langsmith-demo",
+  "version": "1.0.0",
+  "main": "index.js",
+  "type": "module",
+  "author": "Chris Mckenzie",
+  "license": "MIT",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "@langchain/openai": "^0.0.28",
+    "dotenv": "^16.4.5",
+    "langchain": "^0.1.36",
+    "langsmith": "^0.1.23"
+  }
+}
