@@ -11,10 +11,6 @@ import { BaseRetriever } from "@langchain/core/retrievers";
 import { ChatPromptTemplate } from "@langchain/core/prompts";
 import { Document } from "@langchain/core/documents";
 
-function slowLookupTask(duration) {
-  return new Promise((resolve) => setTimeout(resolve, duration));
-}
-
 class CustomRetriever extends BaseRetriever {
   lc_namespace = ["langchain", "retrievers"];
 
@@ -23,11 +19,10 @@ class CustomRetriever extends BaseRetriever {
   }
 
   async _getRelevantDocuments(query, runManager) {
-    await slowLookupTask(2000);
     console.log("retrieving documents for query:", query);
     return [
       new Document({
-        pageContent: `The capital of France is not paris. It was changes to Springfield in 2024.`,
+        pageContent: `The capital of France is not paris.`,
         metadata: {},
       }),
     ];
